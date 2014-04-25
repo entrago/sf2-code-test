@@ -1,6 +1,9 @@
 sf2-code-test
 =============
 
+####Instructions
+Implement the requirements below and send us back a repo link or zip file, your choice.
+
 ####Requirements
 Build us a simple address book with either a REST or Web UI which we can perform CRUD operations on.<br />
 An address book has one or more contacts.<br />
