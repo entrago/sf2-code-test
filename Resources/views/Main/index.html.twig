@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Adress Book administration</h1>
+
+    <ul>
+        <li><strong><a href="{{ path('book') }}">Manage Adress Books</a></strong></li>
+        <li><strong><a href="{{ path('contact') }}">Manage Contacts</a></strong></li>
+    </ul>
+{% endblock %}

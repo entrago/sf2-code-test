@@ -1,0 +1,22 @@
+{
+    "name": "entrago/CRUD",
+    "description": "This is entrago testing bundle...",
+    "keywords": ["test", "crud", "entrago"],
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Patrik Fuhrmann",
+            "email": "fuhrmann.patrik@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": "~2.4",
+        "sensio/framework-extra-bundle": "~3.0"
+    },
+    "autoload": {
+        "psr-0": { "Entrago\\CRUDBundle": "" }
+    },
+    "target-dir": "Entrago/CRUDBundle",
+    "minimum-stability": "dev"
+}

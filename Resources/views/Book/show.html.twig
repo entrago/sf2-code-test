@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Adress Book Details</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+    <strong>Contacts:</strong>
+    {% if entity.contacts is empty %}
+        <strong>No contacts in this addresss book.</strong>
+    {% else %}
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for contact in entity.contacts %}
+                <tr>
+                    <td>{{ contact.id }}</td>
+                    <td>{{ contact.name }}</td>
+                    <td><a href="{{ path('contact_show', { 'id': contact.id }) }}">Details</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('contact_new', {'book_id': entity.id }) }}">Create new contact</a>
+        </li>
+        <li>
+            <a href="{{ path('book') }}">Back to the address book list</a>
+        </li>
+        <li>
+            <a href="{{ path('book_edit', { 'id': entity.id }) }}">Edit</a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}
