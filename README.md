@@ -1,3 +1,12 @@
+CRUDBundle
+=============
+
+Hi Entrago!
+As requested, this is very simple test, 0 design, CRUD test bundle.
+
+Main view is 'GET /CRUDBundle'
+
+=======
 sf2-code-test
 =============
 

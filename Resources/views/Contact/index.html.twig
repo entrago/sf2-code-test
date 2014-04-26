@@ -1,0 +1,51 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <p><a href="{{ path('crud_main') }}">CRUD Main</a> | <a href="{{ path('book') }}">Manage Adress Books</a><p>
+
+    <h1>Contacts list</h1>
+
+    {% if entities is empty %}
+        <strong>No contacts created so far. Create new one below.</strong>
+    {% else %}
+        <table class="records_list">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Book</th>
+                    <th>Name</th>
+                    <th>Number</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr>
+                    <td><a href="{{ path('contact_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                    <td>{{ entity.book.title }}</td>
+                    <td>{{ entity.name }}</td>
+                    <td>{{ entity.number }}</td>
+                    <td>{{ entity.email }}</td>
+                    <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contact_show', { 'id': entity.id }) }}">Details</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contact_edit', { 'id': entity.id }) }}">Edit</a>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    <ul>
+        <li>
+            <a href="{{ path('contact_new') }}">Create a new contact</a>
+        </li>
+    </ul>
+{% endblock %}
